@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework</title>
+  <script>
+    (function () {
+      var dest = "/Homework/";
+      try {
+        sessionStorage.setItem("hw-redirect", location.href);
+      } catch (e) {}
+      location.replace(dest);
+    })();
+  </script>
+</head>
+<body>
+  <p><a href="/Homework/">숙제 진행 페이지로 이동</a></p>
+</body>
+</html>
