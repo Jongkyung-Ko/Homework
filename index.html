@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      var path = location.pathname;
+      var base = path.indexOf("/Homework") !== -1 ? "/Homework/" : "./";
+      var el = document.createElement("base");
+      el.href = base;
+      document.head.appendChild(el);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <title>Homework — 숙제 진행 공유</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="kicker">Homework</p>
+    <h1>숙제 진행을 외부에서도 그대로 볼 수 있습니다</h1>
+    <p class="lede">
+      로컬뿐 아니라 GitHub Pages(<code>/Homework/</code> 경로)에서도 같은 화면이 열리도록
+      상대 경로와 base URL을 맞춰 두었습니다. 아래 목록을 공유하면 됩니다.
+    </p>
+    <a class="live-url" href="https://jongkyung-ko.github.io/Homework/" id="live-link">
+      https://jongkyung-ko.github.io/Homework/
+    </a>
+  </header>
+
+  <main id="item-list" aria-live="polite"></main>
+
+  <footer>
+    항목을 바꾸려면 <code>js/items.js</code>를 수정한 뒤 GitHub <code>main</code>에 올리면 됩니다.
+    로컬 확인: <code>python3 serve.py</code> → <a href="/Homework/">http://localhost:8080/Homework/</a>
+  </footer>
+
+  <script src="js/items.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
